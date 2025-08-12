@@ -46,6 +46,13 @@ public class ChallengeManager {
                     if (!challenge.isCompleted()) {
                         challenge.setCompleted(true);
                         updated = true;
+                    
+                            if (killer instanceof ServerPlayerEntity player) {
+                                if (challenge.getReward() != null) {
+                                    challenge.getReward().giveToPlayer(player);
+                                }
+                             }
+ 
                         level.updateCompletedStatus();
                         chapter.updateCompletedStatus();
 
