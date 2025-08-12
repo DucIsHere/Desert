@@ -6,6 +6,19 @@ public class Challenge {
     private boolean completed;         // Trạng thái đã hoàn thành
     private final int rewardPoints;    // Điểm thưởng khi hoàn thành
 
+    private ChallengeReward reward;
+
+    public Challenge(String id, String description, ChallengeReward reward) {
+    this.id = id;
+    this.description = description;
+    this.reward = reward;
+    this.completed = false;
+    }
+
+    public ChallengeReward getReward() {
+    return reward;
+    }
+
     public Challenge(String id, String description, int rewardPoints) {
         this.id = id;
         this.description = description;
